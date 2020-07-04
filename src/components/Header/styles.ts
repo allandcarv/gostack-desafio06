@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 interface ContainerProps {
   size?: 'small' | 'large';
@@ -30,6 +31,25 @@ export const Container = styled.div<ContainerProps>`
         &:hover {
           opacity: 0.6;
         }
+      }
+    }
+  }
+`;
+
+export const Menu = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  li {
+    & + li {
+      margin-left: 32px;
+    }
+
+    a {
+      &.active {
+        border-bottom: 2px solid #ff872c;
+        padding-bottom: 10px;
       }
     }
   }
